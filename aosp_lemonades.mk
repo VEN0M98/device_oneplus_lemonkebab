@@ -18,13 +18,16 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
+# Inherit some common Descendant stuff.
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+
 # Inherit from lemonades device
 $(call inherit-product, device/oneplus/lemonades/device.mk)
 
 # Boot Animation
 TARGET_BOOT_ANIMATION_RES := 1080
 
-PRODUCT_NAME := lemonades
+PRODUCT_NAME := aosp_lemonades
 PRODUCT_DEVICE := lemonades
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_BRAND := OnePlus
@@ -40,3 +43,4 @@ TARGET_SUPPORTS_QUICK_TAP := true
 WITH_GMS := true
 TARGET_INCLUDE_LIVE_WALLPAPERS := true
 TARGET_FACE_UNLOCK_SUPPORTED := true
+WITH_GAPPS := true
