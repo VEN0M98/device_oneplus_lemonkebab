@@ -18,14 +18,17 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
+# Inherit common Cherish configurations
+$(call inherit-product, vendor/cherish/config/common_full_phone.mk)
+
 # Inherit from lemonades device
-$(call inherit-product, device/oneplus/lemonades/device.mk)
+$(call inherit-product, device/oneplus/lemonkebab/device.mk)
 
 # Boot Animation
 TARGET_BOOT_ANIMATION_RES := 1080
 
-PRODUCT_NAME := lemonades
-PRODUCT_DEVICE := lemonades
+PRODUCT_NAME := cherish_lemonkebab
+PRODUCT_DEVICE := lemonkebab
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_BRAND := OnePlus
 PRODUCT_MODEL := LE2101
@@ -36,10 +39,17 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_DEVICE=OnePlus9R \
     PRODUCT_NAME=OnePlus9R
 
-TARGET_SUPPORTS_QUICK_TAP := true
-WITH_GMS := true
-TARGET_INCLUDE_LIVE_WALLPAPERS := true
+
+# Cherish OS Stuffs
+CHERISH_BUILD_TYPE=UNOFFICIAL
+ TARGET_SUPPORTS_QUICK_TAP := true
+ WITH_GMS := true
+ TARGET_INCLUDE_LIVE_WALLPAPERS := true
 TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_SUPPORTS_GOOGLE_RECORDER := true
-USE_PIXEL_CHARGER_IMAGES := true
 TARGET_SUPPORTS_CALL_RECORDING := true
+USE_PIXEL_CHARGING := true
+TARGET_USES_BLUR := true
+
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.cherish.maintainer=VENØM98

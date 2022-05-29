@@ -15,9 +15,10 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lemonades.mk
+    $(LOCAL_DIR)/cherish_lemonkebab.mk
 
 COMMON_LUNCH_CHOICES := \
-    lemonades-user \
-    lemonades-userdebug \
-    lemonades-eng
+   cherish_lemonkebab-userdebug \
+   cherish_lemonkebab-user \
+   cherish_lemonkebab-eng
+
